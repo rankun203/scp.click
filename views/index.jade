@@ -7,7 +7,7 @@ block content
         img(src=qrUrl, alt='Session Code')
     pre#msgBox.ib
     script(src='/bower_components/socket.io-client/socket.io.js')
-    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/bower_components/jquery/dist/jquery.min.js')
     script.
         window.scpSessionId = '#{sessionId}';
         window.scpChannel = '#{channelId}';
