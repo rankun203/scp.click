@@ -3,7 +3,7 @@ extends layout
 block content
     div.ib.info
         h1= title
-        p Welcome to #{title}
+        p#prompt #{title} is loading...
         img(src=qrUrl, alt='Session Code')
     pre#msgBox.ib
     script(src='/bower_components/socket.io-client/socket.io.js')

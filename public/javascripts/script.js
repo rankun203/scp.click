@@ -20,4 +20,5 @@
     sessionId: scpSessionId
   });
 
+  $('#prompt').text('scp.click is ready');
 })();

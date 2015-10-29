@@ -4,23 +4,27 @@
 extends layout
 
 block content
+    p#prompt #{title} is loading...
     form#form
         input#textField(type='text')
         input#submitMsg(type='submit')
     //script(src='/bower_components/socket.io-client/socket.io.js')
     script(src='/bower_components/jquery/dist/jquery.min.js')
     script.
-        $("#submitMsg").click(function (e) {
-            e.preventDefault();
-            var text = $('#textField').val();
-            $.post('#{sitePath}/s/#{sessionId}/msg', {
-                text: text
-            }, function (err, data) {
-                console.log(err, data);
-                $('#textField').val('');
+        (function () {
+            $("#submitMsg").click(function (e) {
+                e.preventDefault();
+                var text = $('#textField').val();
+                $.post('#{sitePath}/s/#{sessionId}/msg', {
+                    text: text
+                }, function (err, data) {
+                    console.log(err, data);
+                    $('#textField').val('');
+                });
             });
-        });
-        $('#form').submit(function (e) {
-            e.preventDefault();
-        });
+            $('#form').submit(function (e) {
+                e.preventDefault();
+            });
+            $('#prompt').text('scp.click is ready');
+        })();
     script(src = '/javascripts/scriptClient.js')
