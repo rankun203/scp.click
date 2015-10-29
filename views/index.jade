@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    div.ib.info
+        h1= title
+        p Welcome to #{title}
+        img(src=qrUrl, alt='Session Code')
+    pre#msgBox.ib
+    script(src='/bower_components/socket.io-client/socket.io.js')
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script.
+        window.scpSessionId = '#{sessionId}';
+        window.scpChannel = '#{channelId}';
+    script(src = '/javascripts/script.js')
