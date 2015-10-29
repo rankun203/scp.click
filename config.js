@@ -4,7 +4,7 @@
  */
 
 var config = {
-  sitePath: 'http://192.168.199.234:3000',
+  sitePath: 'http://scp.click',
   sessionLength: 10,
   redis: {
     host: '127.0.0.1',
